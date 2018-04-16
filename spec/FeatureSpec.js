@@ -21,6 +21,25 @@ describe('Airport', function() {
      });
    });
 
+   describe('when stormy, plane is not allowed to', function() {
+     it('land', function() {
+      var airport = function(){
+        airport = new Airport()
+        airport.land(plane, 'stormy')
+      }
+       expect(airport).toThrowError('Plane is not allowed to land when stormy');
+     });
+
+     it('take off', function() {
+      var airport = function(){
+        airport = new Airport()
+        airport.take_off(plane, 'stormy')
+      }
+       expect(airport).toThrowError('Plane is not allowed to take off when stormy');
+     });
+
+   });
+
 
 
   });
